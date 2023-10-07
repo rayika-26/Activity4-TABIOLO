@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Make it compatible with mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profit Prediction</title>
+
+</head>
+
+<body style="background: #000;">
+    <div class="login">
+        <h1 style="color: Violet;">Profit Prediction</h1>
+
+        <!-- Action is where the data is sent. In our case, the predict page.
+            If action is omitted, it's assumed to be the current page -->
+        <form action="{{ url_for('predict')}}" method="post">
+
+            <input type="text" name="feature1" placeholder="R&D Spend" required="required" /><br>
+            <input type="text" name="feature2" placeholder="Administration" required="required" /><br>
+            <input type="text" name="feature3" placeholder="Market Spend" required="required" /><br>
+
+            <p></p><button type="submit" class="btn btn-primary btn-block btn-large">Predict Profit</button><br>
+        </form>
+
+        <br>
+        <br>
+        <h4 style="color: Violet;">
+            {{ prediction_text }}
+        </h4>
+
+    </div>
+
+</body>
+
+</html>
